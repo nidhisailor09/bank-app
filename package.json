@@ -26,5 +26,9 @@
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.4"
-  }
+  },
+  "description": "Modern UI/UX website using React.js & Tailwind CSS",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
 }

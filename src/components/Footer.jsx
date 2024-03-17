@@ -1,8 +1,21 @@
 import styles from "../style";
 import { logo } from "../assets"; 
 import { footerLinks, socialMedia } from "../constants"; 
+import { useState } from "react";
 
-const Footer = () => (
+const Footer = () => {
+
+  const [hoveredIcons, setHoveredIcons] = useState({});
+
+  const handleMouseEnter = (socialId) => {
+    setHoveredIcons(prevState =>({...prevState,[socialId]: true}));
+  };
+
+  const handleMouseLeave = (socialId) => {
+    setHoveredIcons(prevState =>({...prevState,[socialId]: false}));
+  };
+
+  return (
     <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
       <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
        
@@ -20,7 +33,7 @@ const Footer = () => (
               </h4>
               <ul className="list-none mt-4">
                 {footerLink.links.map((link,index) => (
-                  <li key={link.name} className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-secondary cursor-pointer`}>
+                  <li key={link.name} className={`font-poppins font-normal text-[16px] leading-[33px] text-dimWhite hover:text-secondary cursor-pointer`}>
                     {link.name}
                   </li>
                 ))}
@@ -37,9 +50,9 @@ const Footer = () => (
 
         <div className="flex flex-row md:mt-0 mt-6">
           {socialMedia.map((social,index) => (
-            <img key={social.id} src={social.icon} alt={social.id}  className={`w-[21px] h-[21px] object-contain cursor-pointer ${
+            <img key={social.id} src={hoveredIcons[social.id] ? social.iconColor : social.icon} alt={social.id}  className={`w-[21px] h-[21px] object-contain cursor-pointer ${
               index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
-            }`}  onClick={() => window.open(social.link)}
+            }`} onClick={() => window.open(social.link)} onMouseEnter={() => handleMouseEnter(social.id)} onMouseLeave={() => handleMouseLeave(social.id)}
             />
           ))}
         </div>
@@ -47,6 +60,6 @@ const Footer = () => (
 
     </section>
   );
-
+}
 
 export default Footer;

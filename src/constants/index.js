@@ -1,4 +1,4 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star } from "../assets";
+import { people01, people02, people03, facebook,facebookColor, instagram,instagramColor, linkedin, linkedinColor, twitter,twitterColor, airbnb, binance, coinbase, dropbox, send, shield, star } from "../assets";
 
 import { airbnbWhite, binanceW, dropboxW, coinbaseW } from "../assets"; 
 
@@ -161,21 +161,25 @@ export const socialMedia = [
     id: "social-media-1",
     icon: instagram,
     link: "https://www.instagram.com/",
+    iconColor: instagramColor,
   },
   {
     id: "social-media-2",
     icon: facebook,
     link: "https://www.facebook.com/",
+    iconColor: facebookColor,
   },
   {
     id: "social-media-3",
     icon: twitter,
     link: "https://www.twitter.com/",
+    iconColor: twitterColor,
   },
   {
     id: "social-media-4",
     icon: linkedin,
     link: "https://www.linkedin.com/",
+    iconColor: linkedinColor
   },
 ];
 

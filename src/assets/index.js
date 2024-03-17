@@ -27,8 +27,16 @@ import airbnbWhite from "./airbnbWhite.png";
 import binanceW from "./binanceW.png";
 import dropboxW from "./dropboxW.png";
 import coinbaseW from "./coinbaseW.png";
+import facebookColor from "./facebookColor.png";
+import twitterColor from "./twitterColor.png";
+import linkedinColor from "./linkedinColor.png";
+import instagramColor from "./instagramColor.png";
 
 export {
+  facebookColor,
+  twitterColor,
+  linkedinColor,
+  instagramColor,
   airbnbWhite,
   binanceW,
   dropboxW,
